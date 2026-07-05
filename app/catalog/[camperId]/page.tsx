@@ -30,12 +30,10 @@ export default function CamperDetailsPage() {
   return (
     <main className={styles.page}>
       <div className={styles.container}>
-        {/* Галерея слева + два блока справа */}
         <div className={styles.topSection}>
           <Gallery images={camper.gallery} />
 
           <div className={styles.rightColumn}>
-            {/* Блок 1: инфо */}
             <div className={styles.infoBlock}>
               <h1 className={styles.name}>{camper.name}</h1>
               <div className={styles.meta}>
@@ -52,7 +50,6 @@ export default function CamperDetailsPage() {
               <p className={styles.description}>{camper.description}</p>
             </div>
 
-            {/* Блок 2: vehicle details */}
             <div className={styles.detailsBlock}>
               <h2 className={styles.sectionTitle}>Vehicle details</h2>
               <ul className={styles.tags}>
@@ -94,7 +91,6 @@ export default function CamperDetailsPage() {
           </div>
         </div>
 
-        {/* Reviews слева + форма справа */}
         <h2 className={styles.reviewsTitle}>Reviews</h2>
         <div className={styles.bottom}>
           <div className={styles.left}>

@@ -34,7 +34,6 @@ export default function BookingForm({ camperId }: { camperId: string }) {
       </p>
 
       <form onSubmit={formik.handleSubmit} className={styles.form}>
-        {/* Два инпута в одном блоке */}
         <div className={styles.inputs}>
           <div className={styles.field}>
             <input

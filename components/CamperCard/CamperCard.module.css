@@ -5,6 +5,14 @@
   background: #f7f7f7;
   border-radius: 16px;
   width: 888px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .image {
@@ -19,7 +27,6 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  /* gap: 8px; */
 }
 
 .header {

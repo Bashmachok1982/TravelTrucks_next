@@ -38,6 +38,14 @@
   transition: opacity 0.2s;
   border: 3px solid transparent;
   flex-shrink: 0;
+  transition:
+    transform 0.2s,
+    opacity 0.2s,
+    border 0.2s;
+}
+
+.thumbImage:hover {
+  transform: scale(1.05);
 }
 
 .thumbActive {
