@@ -1,44 +1,57 @@
 .aside {
   width: 360px;
   flex-shrink: 0;
+  padding: 24px;
+  background: #f7f7f7;
+  border-radius: 20px;
 }
 
 .locationLabel {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 .locationTitle {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.43;
-  color: #475467;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c717b;
+}
+
+.locationInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 312px;
+  height: 56px;
+  padding: 18px 20px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.locationIcon {
+  font-size: 20px;
+  color: #101828;
+  flex-shrink: 0;
 }
 
 .locationInput {
-  width: 100%;
-  height: 56px;
-  padding: 16px 18px;
-  background: #f7f7f7;
-  border: 1px solid #f7f7f7;
-  border-radius: 12px;
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: 500;
-  color: #101828;
+  flex: 1;
+  border: none;
   outline: none;
-  transition: border-color 0.2s;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #101828;
 }
 
 .locationInput::placeholder {
   color: #101828;
   opacity: 0.5;
-}
-
-.locationInput:focus {
-  border-color: #829b91;
 }
 
 .filtersTitle {
@@ -55,24 +68,24 @@
 }
 
 .legend {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.43;
-  color: #475467;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c717b;
   margin-bottom: 16px;
 }
 
 .radioGroup {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .radioLabel {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 500;
+  gap: 8px;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: #101828;
@@ -96,38 +109,55 @@
   border-width: 5px;
 }
 
+.buttons {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .searchBtn {
-  width: 100%;
+  width: 312px;
   height: 56px;
-  background: #101828;
+  background: #829b91;
   border-radius: 200px;
+  padding: 16px 60px;
+  font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: -0.01em;
   color: #fff;
-  margin-bottom: 16px;
   transition: background 0.2s;
-  font-family: inherit;
+  cursor: pointer;
+  border: none;
 }
 
 .searchBtn:hover {
-  background: #829b91;
+  background: #6d7b75;
 }
 
 .clearBtn {
-  width: 100%;
+  width: 312px;
+  height: 56px;
+  background: #fff;
+  border: 1px solid #dadde1;
+  border-radius: 200px;
+  padding: 16px 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
+  font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: -0.01em;
   color: #101828;
-  font-family: inherit;
-  transition: color 0.2s;
+  cursor: pointer;
+  transition: border-color 0.2s;
 }
 
 .clearBtn:hover {
-  color: #829b91;
+  border-color: #829b91;
 }

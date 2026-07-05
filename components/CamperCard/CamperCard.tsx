@@ -28,6 +28,10 @@ export default function CamperCard({ camper }: { camper: CamperListItem }) {
           </span>
         </div>
 
+        <p className={styles.description}>
+          {camper.name} — available for rent in {camper.location}
+        </p>
+
         <ul className={styles.tags}>
           <li className={styles.tag}>
             <BsFuelPump className={styles.tagIcon} />

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useFilters } from "@/hooks/useFilters";
 import { CamperForm, Engine, Transmission } from "@/lib/types";
 import styles from "./Filters.module.css";
+import { IoLocationOutline } from "react-icons/io5";
 
 interface FiltersState {
   location: string;
@@ -39,12 +40,15 @@ export default function Filters({ onApply }: Props) {
     <aside className={styles.aside}>
       <label className={styles.locationLabel}>
         <span className={styles.locationTitle}>Location</span>
-        <input
-          className={styles.locationInput}
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          placeholder="Kyiv, Ukraine"
-        />
+        <div className={styles.locationInputWrapper}>
+          <IoLocationOutline className={styles.locationIcon} />
+          <input
+            className={styles.locationInput}
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            placeholder="City"
+          />
+        </div>
       </label>
 
       <p className={styles.filtersTitle}>Filters</p>
@@ -103,12 +107,14 @@ export default function Filters({ onApply }: Props) {
         </div>
       </fieldset>
 
-      <button className={styles.searchBtn} onClick={handleSearch}>
-        Search
-      </button>
-      <button className={styles.clearBtn} onClick={handleClear}>
-        ✕ Clear filters
-      </button>
+      <div className={styles.buttons}>
+        <button className={styles.searchBtn} onClick={handleSearch}>
+          Search
+        </button>
+        <button className={styles.clearBtn} onClick={handleClear}>
+          ✕ Clear filters
+        </button>
+      </div>
     </aside>
   );
 }

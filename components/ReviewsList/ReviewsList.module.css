@@ -5,20 +5,27 @@
 }
 
 .review {
+  padding: 16px;
+  background: #f7f7f7;
+  border-radius: 16px;
+  width: 623px;
+  min-height: 180px;
   display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
   gap: 16px;
-  padding: 24px;
-  background: #fff;
-  border: 1px solid #d0d5dd;
-  border-radius: 20px;
 }
 
 .avatar {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #f7f7f7;
-  border: 1px solid #d0d5dd;
+  background: #e7e7e7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,17 +35,12 @@
   flex-shrink: 0;
 }
 
-.body {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
 .name {
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
   color: #101828;
+  margin-bottom: 4px;
 }
 
 .stars {
@@ -48,12 +50,12 @@
 
 .starFilled {
   color: #ffc531;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .starEmpty {
   color: #d0d5dd;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .comment {

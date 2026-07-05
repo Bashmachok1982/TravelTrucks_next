@@ -34,38 +34,43 @@ export default function BookingForm({ camperId }: { camperId: string }) {
       </p>
 
       <form onSubmit={formik.handleSubmit} className={styles.form}>
-        <div className={styles.field}>
-          <input
-            className={`${styles.input} ${
-              formik.touched.name && formik.errors.name ? styles.inputError : ""
-            }`}
-            name="name"
-            placeholder="Name*"
-            value={formik.values.name}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.touched.name && formik.errors.name && (
-            <span className={styles.error}>{formik.errors.name}</span>
-          )}
-        </div>
+        {/* Два инпута в одном блоке */}
+        <div className={styles.inputs}>
+          <div className={styles.field}>
+            <input
+              className={`${styles.input} ${
+                formik.touched.name && formik.errors.name
+                  ? styles.inputError
+                  : ""
+              }`}
+              name="name"
+              placeholder="Name*"
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.name && formik.errors.name && (
+              <span className={styles.error}>{formik.errors.name}</span>
+            )}
+          </div>
 
-        <div className={styles.field}>
-          <input
-            className={`${styles.input} ${
-              formik.touched.email && formik.errors.email
-                ? styles.inputError
-                : ""
-            }`}
-            name="email"
-            placeholder="Email*"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-          />
-          {formik.touched.email && formik.errors.email && (
-            <span className={styles.error}>{formik.errors.email}</span>
-          )}
+          <div className={styles.field}>
+            <input
+              className={`${styles.input} ${
+                formik.touched.email && formik.errors.email
+                  ? styles.inputError
+                  : ""
+              }`}
+              name="email"
+              placeholder="Email*"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.email && formik.errors.email && (
+              <span className={styles.error}>{formik.errors.email}</span>
+            )}
+          </div>
         </div>
 
         <button

@@ -1,7 +1,7 @@
 .page {
-  background: #f7f7f7;
+  background: #fff;
   min-height: 100vh;
-  padding: 40px 0;
+  padding: 64px 0 60px;
 }
 
 .container {
@@ -10,7 +10,6 @@
   padding: 0 64px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
 .loading {
@@ -20,30 +19,63 @@
   color: #475467;
 }
 
-.head {
+/* Верхняя секция */
+.topSection {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 88px;
+}
+
+/* Правая колонка — два блока */
+.rightColumn {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: space-between;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* Блок 1: имя, рейтинг, цена, описание */
+.infoBlock {
+  background: #f7f7f7;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Блок 2: vehicle details */
+.detailsBlock {
+  background: #f7f7f7;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .name {
   font-weight: 600;
-  font-size: 36px;
-  line-height: 1.11;
+  font-size: 24px;
+  line-height: 1.33;
   color: #101828;
+  margin-bottom: 8px;
 }
 
 .meta {
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-bottom: 16px;
 }
-
 .rating {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   color: #101828;
   text-decoration: underline;
@@ -58,7 +90,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   color: #101828;
 }
@@ -69,9 +101,10 @@
 
 .price {
   font-weight: 600;
-  font-size: 36px;
-  line-height: 1.11;
+  font-size: 24px;
+  line-height: 1.33;
   color: #101828;
+  margin-bottom: 24px;
 }
 
 .description {
@@ -81,54 +114,37 @@
   color: #475467;
 }
 
+.sectionTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.3333;
+  color: #101828;
+  margin-bottom: 16px;
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-bottom: 32px;
 }
 
 .tag {
   padding: 12px 18px;
-  background: #f7f7f7;
-  border: 1px solid #d0d5dd;
+  background: #f2f4f7;
+  mix-blend-mode: multiply;
   border-radius: 100px;
   font-weight: 500;
   font-size: 16px;
+  line-height: 1.5;
   color: #101828;
-}
-
-.bottom {
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-}
-
-.left {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.right {
-  width: 400px;
-  flex-shrink: 0;
-  position: sticky;
-  top: 100px;
-}
-
-.sectionTitle {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.33;
-  color: #101828;
-  margin-bottom: 24px;
+  white-space: nowrap;
 }
 
 .detailsList {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 8px;
 }
 
 .detailsItem {
@@ -137,6 +153,36 @@
   font-size: 16px;
   line-height: 1.5;
   color: #101828;
-  padding-bottom: 14px;
-  border-bottom: 1px solid #f2f4f7;
+  padding: 0;
+  border: none;
+}
+
+/* Нижняя секция */
+.bottom {
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+/* Reviews — серый фон */
+.left {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Форма — белый с border */
+.right {
+  width: 641px;
+  flex-shrink: 0;
+  border: 1px solid #dadde1;
+  border-radius: 16px;
+  padding: 44px 57px;
+}
+.reviewsTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  color: #101828;
+  margin-bottom: 24px;
 }

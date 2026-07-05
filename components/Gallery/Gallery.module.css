@@ -1,36 +1,50 @@
 .wrapper {
+  width: 638px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  width: 100%;
-  max-width: 600px;
 }
 
 .mainSwiper {
-  width: 100%;
-  border-radius: 16px;
+  width: 638px;
+  height: 505px;
+  border-radius: 17px;
   overflow: hidden;
+  margin-bottom: 28px;
 }
 
 .mainImage {
-  width: 100%;
-  height: 400px;
+  width: 638px;
+  height: 505px;
   object-fit: cover;
+  display: block;
 }
 
 .thumbsSwiper {
   width: 100%;
 }
+.thumbsWrapper {
+  display: flex;
+  gap: 32px;
+}
 
 .thumbImage {
-  width: 100%;
-  height: 96px;
+  width: 136px;
+  height: 144px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 16px;
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.2s;
+  border: 3px solid transparent;
+  flex-shrink: 0;
 }
+
+.thumbActive {
+  opacity: 1;
+  border: 3px solid #829b91;
+}
+
 .thumbsSwiper .swiper-slide {
   cursor: pointer;
 }

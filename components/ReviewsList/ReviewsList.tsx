@@ -21,14 +21,16 @@ export default function ReviewsList({ reviews }: { reviews: Review[] }) {
     <section className={styles.section}>
       {reviews.map((review) => (
         <div key={review.id} className={styles.review}>
-          <div className={styles.avatar}>
-            {review.reviewer_name[0].toUpperCase()}
+          <div className={styles.header}>
+            <div className={styles.avatar}>
+              {review.reviewer_name[0].toUpperCase()}
+            </div>
+            <div>
+              <p className={styles.name}>{review.reviewer_name}</p>
+              <Stars rating={review.reviewer_rating} />
+            </div>
           </div>
-          <div className={styles.body}>
-            <p className={styles.name}>{review.reviewer_name}</p>
-            <Stars rating={review.reviewer_rating} />
-            <p className={styles.comment}>{review.comment}</p>
-          </div>
+          <p className={styles.comment}>{review.comment}</p>
         </div>
       ))}
     </section>

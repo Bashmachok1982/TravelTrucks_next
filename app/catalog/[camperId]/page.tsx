@@ -30,44 +30,40 @@ export default function CamperDetailsPage() {
   return (
     <main className={styles.page}>
       <div className={styles.container}>
-        {/* Шапка */}
-        <div className={styles.head}>
-          <h1 className={styles.name}>{camper.name}</h1>
-          <div className={styles.meta}>
-            <span className={styles.rating}>
-              <MdStar className={styles.starIcon} />
-              {camper.rating}({camper.totalReviews} Reviews)
-            </span>
-            <span className={styles.location}>
-              <IoLocationOutline className={styles.icon} />
-              {camper.location}
-            </span>
-          </div>
-          <p className={styles.price}>€{camper.price}</p>
-        </div>
+        {/* Галерея слева + два блока справа */}
+        <div className={styles.topSection}>
+          <Gallery images={camper.gallery} />
 
-        {/* Галерея */}
-        <Gallery images={camper.gallery} />
+          <div className={styles.rightColumn}>
+            {/* Блок 1: инфо */}
+            <div className={styles.infoBlock}>
+              <h1 className={styles.name}>{camper.name}</h1>
+              <div className={styles.meta}>
+                <span className={styles.rating}>
+                  <MdStar className={styles.starIcon} />
+                  {camper.rating}({camper.totalReviews} Reviews)
+                </span>
+                <span className={styles.location}>
+                  <IoLocationOutline className={styles.icon} />
+                  {camper.location}
+                </span>
+              </div>
+              <p className={styles.price}>€{camper.price}</p>
+              <p className={styles.description}>{camper.description}</p>
+            </div>
 
-        {/* Описание */}
-        <p className={styles.description}>{camper.description}</p>
-
-        {/* Теги amenities */}
-        <ul className={styles.tags}>
-          {camper.amenities.map((a) => (
-            <li key={a} className={styles.tag}>
-              {a}
-            </li>
-          ))}
-          <li className={styles.tag}>{camper.transmission}</li>
-          <li className={styles.tag}>{camper.engine}</li>
-        </ul>
-
-        {/* Нижний блок: детали + отзывы слева, форма справа */}
-        <div className={styles.bottom}>
-          <div className={styles.left}>
-            <section className={styles.details}>
+            {/* Блок 2: vehicle details */}
+            <div className={styles.detailsBlock}>
               <h2 className={styles.sectionTitle}>Vehicle details</h2>
+              <ul className={styles.tags}>
+                {camper.amenities.map((a) => (
+                  <li key={a} className={styles.tag}>
+                    {a}
+                  </li>
+                ))}
+                <li className={styles.tag}>{camper.transmission}</li>
+                <li className={styles.tag}>{camper.engine}</li>
+              </ul>
               <ul className={styles.detailsList}>
                 <li className={styles.detailsItem}>
                   <span>Form</span>
@@ -94,14 +90,18 @@ export default function CamperDetailsPage() {
                   <span>{camper.consumption}</span>
                 </li>
               </ul>
-            </section>
-
-            <section>
-              <h2 className={styles.sectionTitle}>Reviews</h2>
-              <ReviewsList reviews={reviews ?? []} />
-            </section>
+            </div>
           </div>
+        </div>
 
+        {/* Reviews слева + форма справа */}
+        <h2 className={styles.reviewsTitle}>Reviews</h2>
+        <div className={styles.bottom}>
+          <div className={styles.left}>
+            <div className={styles.reviewsBlock}>
+              <ReviewsList reviews={reviews ?? []} />
+            </div>
+          </div>
           <div className={styles.right}>
             <BookingForm camperId={camperId} />
           </div>
