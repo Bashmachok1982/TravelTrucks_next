@@ -73,7 +73,7 @@ export interface CamperDetails {
   consumption: string;
   transmission: Transmission;
   engine: Engine;
-  amenities: Amenity[]; // в примере одна строка "ac", но по схеме CamperListItemDto amenities — массив; ориентируйтесь на массив
+  amenities: Amenity[];
   gallery: CamperImage[];
   createdAt: string;
   updatedAt: string;
