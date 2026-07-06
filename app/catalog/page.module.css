@@ -26,9 +26,25 @@
 }
 
 .empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 60px;
+  text-align: center;
+}
+
+.emptyTitle {
+  font-weight: 600;
+  font-size: 24px;
+  color: #101828;
+}
+
+.emptyText {
+  font-weight: 400;
   font-size: 16px;
   color: #475467;
-  text-align: center;
 }
 
 .loadMoreBtn {

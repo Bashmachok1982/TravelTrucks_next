@@ -17,6 +17,13 @@ interface Props {
   onApply: (filters: FiltersState) => void;
 }
 
+const formatLabel = (value: string): string => {
+  return value
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
 export default function Filters({ onApply }: Props) {
   const { data: filterOptions } = useFilters();
   const [location, setLocation] = useState("");
@@ -65,7 +72,7 @@ export default function Filters({ onApply }: Props) {
                 checked={form === f}
                 onChange={() => setForm(f)}
               />
-              {f}
+              {formatLabel(f)}
             </label>
           ))}
         </div>
@@ -83,7 +90,7 @@ export default function Filters({ onApply }: Props) {
                 checked={engine === e}
                 onChange={() => setEngine(e)}
               />
-              {e}
+              {formatLabel(e)}
             </label>
           ))}
         </div>
@@ -101,7 +108,7 @@ export default function Filters({ onApply }: Props) {
                 checked={transmission === t}
                 onChange={() => setTransmission(t)}
               />
-              {t}
+              {formatLabel(t)}
             </label>
           ))}
         </div>

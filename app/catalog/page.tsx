@@ -31,7 +31,10 @@ export default function CatalogPage() {
         {isLoading && <Loader />}
 
         {!isLoading && campers.length === 0 && (
-          <p className={styles.empty}>No campers found</p>
+          <div className={styles.empty}>
+            <p className={styles.emptyTitle}>No campers found</p>
+            <p className={styles.emptyText}>Try changing your search filters</p>
+          </div>
         )}
 
         <ul className={styles.list}>

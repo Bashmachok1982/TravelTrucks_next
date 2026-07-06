@@ -58,3 +58,6 @@
 .navLink:hover::after {
   width: 100%;
 }
+.navLinkActive {
+  color: #829b91;
+}

@@ -53,7 +53,8 @@
 }
 
 .inputError {
-  border-color: #e44848;
+  border: 1px solid #e44848;
+  background: #fff0f0;
 }
 
 .error {
