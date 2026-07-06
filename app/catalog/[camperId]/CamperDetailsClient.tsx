@@ -90,10 +90,9 @@ export default function CamperDetailsClient({
             </div>
           </div>
         </div>
-
+        <h2 className={styles.reviewsTitle}>Reviews</h2>
         <div className={styles.bottom}>
           <div className={styles.left}>
-            <h2 className={styles.reviewsTitle}>Reviews</h2>
             <div className={styles.reviewsBlock}>
               <ReviewsList reviews={reviews ?? []} />
             </div>

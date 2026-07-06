@@ -1,3 +1,17 @@
+## 📸 Screenshots
+
+### Home Page
+
+![Home Page](./public/images/screenshot-home.webp)
+
+### Catalog Page
+
+![Catalog Page](./public/images/screenshot-catalog.webp)
+
+### Camper Details
+
+![Camper Details](./public/images/screenshot-details.webp)
+
 # TravelTrucks_next# TravelTrucks
 
 TravelTrucks is a camper rental web application built with Next.js and TypeScript.

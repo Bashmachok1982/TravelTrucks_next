@@ -4,19 +4,28 @@ import CamperDetailsClient from "@/app/catalog/[camperId]/CamperDetailsClient";
 export async function generateMetadata({
   params,
 }: {
-  params: { camperId: string };
+  params: Promise<{ camperId: string }>;
 }) {
-  const camper = await fetchCamperById(params.camperId);
-  return {
-    title: `${camper.name} — TravelTrucks`,
-    description: camper.description,
-  };
+  const { camperId } = await params;
+  try {
+    const camper = await fetchCamperById(camperId);
+    return {
+      title: `${camper.name} — TravelTrucks`,
+      description: camper.description,
+    };
+  } catch {
+    return {
+      title: "Camper Details — TravelTrucks",
+      description: "View camper details",
+    };
+  }
 }
 
-export default function CamperDetailsPage({
+export default async function CamperDetailsPage({
   params,
 }: {
-  params: { camperId: string };
+  params: Promise<{ camperId: string }>;
 }) {
-  return <CamperDetailsClient camperId={params.camperId} />;
+  const { camperId } = await params;
+  return <CamperDetailsClient camperId={camperId} />;
 }

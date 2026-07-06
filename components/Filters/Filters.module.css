@@ -107,8 +107,8 @@
 }
 
 .radioInput:checked {
-  border: 6px solid #101828;
-  background: #fff;
+  border: 6px solid #101828 !important;
+  background: #fff !important;
 }
 
 .radioInput:hover {
